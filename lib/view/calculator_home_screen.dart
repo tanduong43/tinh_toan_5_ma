@@ -20,7 +20,6 @@ class CalculatorHomeScreen extends StatelessWidget {
             Expanded(
               child: Obx(() {
                 final groups = chunkBy5(c.numbers);
-
                 return SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
