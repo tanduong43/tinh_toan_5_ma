@@ -195,23 +195,6 @@ class CalculatorController extends GetxController {
   /// ✅ Reset: xoá danh sách HIỂN THỊ + tổng tất cả + phiên hiện tại
   /// ✅ KHÔNG XOÁ lịch sử
   Future<void> reset() async {
-    // reset phiên hiện tại
-    // input.value = '';
-    // numbers.clear();
-    // rawSum.value = 0.0;
-    // multiplier.value = 0.0;
-
-    // // reset phần hiển thị + tổng
-    // displaySessions.clear();
-    // totalAllSessions.value = 0.0;
-
-    // await _persistDisplay();
-
-    // Get.snackbar(
-    //   'Reset',
-    //   'Đã reset tổng tất cả',
-    //   snackPosition: SnackPosition.BOTTOM,
-    // );
     Get.dialog(
       AlertDialog(
         title: Text("Thông báo"),
@@ -230,10 +213,14 @@ class CalculatorController extends GetxController {
               totalAllSessions.value = 0.0;
 
               await _persistDisplay();
-              // Navigator.of(Get.context!).pop();
               if (Get.isDialogOpen ?? false) {
                 Get.back();
               }
+              Get.snackbar(
+                "OK",
+                "Đã reset xong",
+                snackPosition: SnackPosition.BOTTOM,
+              );
             },
             child: Text("Chấp nhận"),
           ),

@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CalculatorHomeScreen extends StatelessWidget {
-  const CalculatorHomeScreen({super.key});
+  CalculatorHomeScreen({super.key});
+  final c = Get.put(CalculatorController());
 
   @override
   Widget build(BuildContext context) {
-    final c = Get.put(CalculatorController());
-
     return Scaffold(
       appBar: AppBar(title: const Text('Ứng dụng Tính Toán')),
       body: Padding(
